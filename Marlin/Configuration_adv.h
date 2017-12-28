@@ -676,7 +676,7 @@
  * K=0 means advance disabled.
  * See Marlin documentation for calibration instructions.
  */
-//#define LIN_ADVANCE
+#define LIN_ADVANCE
 
 #if ENABLED(LIN_ADVANCE)
   #define LIN_ADVANCE_K 75
@@ -1383,7 +1383,7 @@
    *
    * M200 D0 to disable, M200 Dn to set a new diameter.
    */
-  //#define VOLUMETRIC_DEFAULT_ON
+  #define VOLUMETRIC_DEFAULT_ON
 #endif
 
 /**
