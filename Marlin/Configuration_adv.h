@@ -679,7 +679,7 @@
 #define LIN_ADVANCE
 
 #if ENABLED(LIN_ADVANCE)
-  #define LIN_ADVANCE_K 75
+  #define LIN_ADVANCE_K 35
 
   /**
    * Some Slicers produce Gcode with randomly jumping extrusion widths occasionally.
@@ -843,7 +843,7 @@
  * Note that M207 / M208 / M209 settings are saved to EEPROM.
  *
  */
-//#define FWRETRACT  // ONLY PARTIALLY TESTED
+#define FWRETRACT  // ONLY PARTIALLY TESTED
 #if ENABLED(FWRETRACT)
   #define MIN_AUTORETRACT 0.1             // When auto-retract is on, convert E moves of this length and over
   #define MAX_AUTORETRACT 10.0            // Upper limit for auto-retract conversion
