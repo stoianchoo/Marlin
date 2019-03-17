@@ -673,7 +673,13 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 100, 100, 100, 1100 } //16 Tooth GT2 1/16 step 1.8deg @ http://www.prusaprinters.org/calculator/#stepspermmbelt
+#define XYZ_FULL_STEPS_PER_ROTATION 200
+#define XYZ_MICROSTEPS 16
+#define XYZ_BELT_PITCH 2
+#define XYZ_PULLEY_TEETH 16
+#define DEFAULT_XYZ_STEPS_PER_UNIT ((XYZ_FULL_STEPS_PER_ROTATION) * (XYZ_MICROSTEPS) / double(XYZ_BELT_PITCH) / double(XYZ_PULLEY_TEETH))
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { DEFAULT_XYZ_STEPS_PER_UNIT, DEFAULT_XYZ_STEPS_PER_UNIT, DEFAULT_XYZ_STEPS_PER_UNIT, 1100 }  // default steps per unit for Kossel (GT2, 20 tooth)
+//#define DEFAULT_AXIS_STEPS_PER_UNIT   { 100, 100, 100, 1100 } //16 Tooth GT2 1/16 step 1.8deg @ http://www.prusaprinters.org/calculator/#stepspermmbelt
 
 /**
  * Default Max Feed Rate (mm/s)
